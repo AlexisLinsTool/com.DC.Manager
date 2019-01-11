@@ -16,5 +16,6 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fram = getSupportFragmentManager();
         FragmentTransaction trans = fram.beginTransaction();
         trans.replace(R.id.Main_frag,new MainTable_fragment());
+        trans.commit();
     }
 }
