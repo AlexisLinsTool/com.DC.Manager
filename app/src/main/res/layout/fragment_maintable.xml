@@ -1,9 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+        <TextView
+            android:id="@+id/MainTable_month"
+            android:layout_width="16dp"
+            android:layout_height="@dimen/MainTable_H_height"
+            android:text="@string/MianTable_H_1_0"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/MainTable_H_height"
+            android:gravity="center"
+            android:text="@string/MianTable_H_1_1"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/MainTable_H_height"
+            android:gravity="center"
+            android:text="@string/MianTable_H_1_2"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/MainTable_H_height"
+            android:gravity="center"
+            android:text="@string/MianTable_H_1_3"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/MainTable_H_height"
+            android:gravity="center"
+            android:text="@string/MianTable_H_1_4"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/MainTable_H_height"
+            android:gravity="center"
+            android:text="@string/MianTable_H_1_5"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/MainTable_H_height"
+            android:gravity="center"
+            android:text="@string/MianTable_H_1_6"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/MainTable_H_height"
+            android:gravity="center"
+            android:text="@string/MianTable_H_1_7"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/MainTable_List"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+    </ListView>
+
+</LinearLayout>
