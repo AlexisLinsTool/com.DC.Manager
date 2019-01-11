@@ -1,6 +1,6 @@
 package manager.dc.com.dcoursemanager.SQL;
 
-public class CourseDBManager {
+public class CourseManager {
     private String courseID;
     private int termNum;
     private String courseName;
