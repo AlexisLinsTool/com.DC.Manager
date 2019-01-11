@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import manager.dc.com.dcoursemanager.Adapter.MainTableAdapter;
 import manager.dc.com.dcoursemanager.OBJ.Course;
 
 public class MainTable_fragment extends Fragment {

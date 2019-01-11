@@ -1,10 +1,11 @@
-package manager.dc.com.dcoursemanager;
+package manager.dc.com.dcoursemanager.UI;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import manager.dc.com.dcoursemanager.R;
 import manager.dc.com.dcoursemanager.UI.MainTable_fragment;
 
 public class MainActivity extends AppCompatActivity {
