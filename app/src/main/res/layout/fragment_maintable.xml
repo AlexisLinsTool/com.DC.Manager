@@ -12,9 +12,10 @@
 
         <TextView
             android:id="@+id/MainTable_month"
-            android:layout_width="16dp"
+            android:layout_width="32dp"
+            android:gravity="center"
             android:layout_height="@dimen/MainTable_H_height"
-            android:text="@string/MianTable_H_1_0"/>
+            android:text="@string/MianTable_H_1_0" />
         <TextView
             android:layout_width="0dp"
             android:layout_height="@dimen/MainTable_H_height"

@@ -7,61 +7,76 @@
 
     <TextView
         android:id="@+id/MainTable_Protion"
-        android:layout_width="16dp"
+        android:layout_width="32dp"
         android:layout_height="@dimen/MainTable_D_height"
         android:singleLine="false"
-        android:text="@string/MianTable_H_1_0"/>
+        android:gravity="center"
+        android:text="1"
+        android:textSize="@dimen/MainTable_TS_MainSize" />
     <TextView
-        android:id="@+id/MainTable_"
+        android:id="@+id/MainTable_Monday"
         android:layout_width="0dp"
         android:layout_height="@dimen/MainTable_D_height"
         android:singleLine="false"
         android:gravity="center"
-        android:text="@string/MianTable_H_1_1"
+        android:text="课程名字"
+        android:textSize="@dimen/MainTable_TS_MainSize"
         android:layout_weight="1"/>
     <TextView
+        android:id="@+id/MainTable_Tuesday"
         android:layout_width="0dp"
         android:layout_height="@dimen/MainTable_D_height"
         android:singleLine="false"
         android:gravity="center"
-        android:text="@string/MianTable_H_1_2"
+        android:text="课程名字"
+        android:textSize="@dimen/MainTable_TS_MainSize"
         android:layout_weight="1"/>
     <TextView
+        android:id="@+id/MainTable_Wednesday"
         android:layout_width="0dp"
         android:layout_height="@dimen/MainTable_D_height"
         android:singleLine="false"
         android:gravity="center"
-        android:text="@string/MianTable_H_1_3"
+        android:text="课程名字"
+        android:textSize="@dimen/MainTable_TS_MainSize"
         android:layout_weight="1"/>
     <TextView
+        android:id="@+id/MainTable_Thursday"
         android:layout_width="0dp"
         android:layout_height="@dimen/MainTable_D_height"
         android:singleLine="false"
         android:gravity="center"
-        android:text="@string/MianTable_H_1_4"
+        android:text="课程名字"
+        android:textSize="@dimen/MainTable_TS_MainSize"
         android:layout_weight="1"/>
     <TextView
+        android:id="@+id/MainTable_Friday"
         android:layout_width="0dp"
         android:layout_height="@dimen/MainTable_D_height"
         android:gravity="center"
         android:singleLine="false"
-        android:text="@string/MianTable_H_1_5"
+        android:text="课程名字"
+        android:textSize="@dimen/MainTable_TS_MainSize"
         android:layout_weight="1"/>
 
     <TextView
+        android:id="@+id/MainTable_Saturday"
         android:layout_width="0dp"
         android:layout_height="@dimen/MainTable_D_height"
         android:singleLine="false"
         android:gravity="center"
-        android:text="@string/MianTable_H_1_6"
+        android:text="课程名字"
+        android:textSize="@dimen/MainTable_TS_MainSize"
         android:focusable="false"
         android:layout_weight="1"/>
     <TextView
+        android:id="@+id/MainTable_Sunday"
         android:layout_width="0dp"
         android:layout_height="@dimen/MainTable_D_height"
         android:singleLine="false"
         android:gravity="center"
-        android:text="@string/MianTable_H_1_7"
+        android:text="课程名字"
+        android:textSize="@dimen/MainTable_TS_MainSize"
         android:focusable="false"
         android:layout_weight="1"/>
 </LinearLayout>

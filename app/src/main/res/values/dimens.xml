@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="MainTable_H_height">32dp</dimen>
+    <dimen name="MainTable_H_height">64dp</dimen>
     <dimen name="MainTable_D_height">64dp</dimen>
+    <dimen name="MainTable_TS_MainSize">10sp</dimen>
 </resources>
