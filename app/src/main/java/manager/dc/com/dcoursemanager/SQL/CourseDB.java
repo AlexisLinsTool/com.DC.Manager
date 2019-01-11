@@ -20,8 +20,8 @@ public class CourseDB extends SQLiteOpenHelper {
             "Year int," +
             "Month int," +
             "Day int," +
-            "WeekNum int," +
             "courseNum int," +
+            "WeekNum int," +
             "address String," +
             "courseID String," +
             "note String" +
