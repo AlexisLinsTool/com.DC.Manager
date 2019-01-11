@@ -6,13 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
+import java.util.List;
+
 import manager.dc.com.dcoursemanager.OBJ.Course;
 
 public class MainTableAdapter extends ArrayAdapter<Course> {
     int resourceID;
     View contentView;
-    public MainTableAdapter() {
-        super(context, resource, textViewResourceId);
+
+    public MainTableAdapter( Context context, int resource,  List<Course> objects) {
+        super(context, resource, objects);
         resourceID = resource;
     }
 
