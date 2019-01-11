@@ -16,7 +16,6 @@ import manager.dc.com.dcoursemanager.OBJ.Course;
 
 public class MainTable_fragment extends Fragment {
     List<Course> li = new ArrayList<>();
-    MainTableAdapter adapter = new MainTableAdapter();
     View contenView;
 
     @Override
