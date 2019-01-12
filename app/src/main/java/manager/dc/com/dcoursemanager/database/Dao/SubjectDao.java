@@ -15,13 +15,13 @@ public interface SubjectDao {
     @Query("select * from subject")
     List<SubjectEntity> getAllSubject();
 
-    @Query("select * from subject where courseId =:courseId and termNum =:termNum")
+    @Query("select * from subject where course_id =:courseId and term_num =:termNum")
     SubjectEntity getSubjectBySubjectId(String courseId,int termNum);
 
     @Query("select distinct  course_name from subject")
     List<String> getAllCourseName();
 
-    @Query("select distinct course_name from subject where termNum =:termNum")
+    @Query("select distinct course_name from subject where term_num =:termNum")
     List<String> getAllCourseNanmeByTermNum(int termNum);
     @Insert
     void add(SubjectEntity entity);
@@ -29,12 +29,12 @@ public interface SubjectDao {
     @Update
     void update(SubjectEntity entity);
 
-    @Query("Update subject set course_teacher =:teacherName where termNum =:termNum and " +
-            "courseId =:courseId")
+    @Query("Update subject set course_teacher =:teacherName where term_num =:termNum and " +
+            "course_id =:courseId")
     void updateTeacherNameByTermNumAndCourseId(int termNum,String courseId,String teacherName);
 
-    @Query("Update subject set termNum =:newtermNum where termNum =:termNum and " +
-            "courseId =:courseId")
+    @Query("Update subject set term_num =:newtermNum where term_num =:termNum and " +
+            "course_id =:courseId")
     void updateTermNumByTermNumAndCourseId(int termNum,String courseId,int newtermNum);
 
     @Delete

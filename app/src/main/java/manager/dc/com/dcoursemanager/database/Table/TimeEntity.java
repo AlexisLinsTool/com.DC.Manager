@@ -4,17 +4,14 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "courseTime")
+@Entity(tableName = "courseTime",primaryKeys = {"year","month","day","course_num","course_id"})
 public class TimeEntity {
-    @PrimaryKey
     public int year;
-    @PrimaryKey
     public int month;
-    @PrimaryKey
     public int day;
-    @PrimaryKey
+    @ColumnInfo(name = "course_num")
     public int courseNum;
-    @PrimaryKey
+    @ColumnInfo(name = "course_id")
     public String courseId;
     @ColumnInfo(name = "term_num")
     public int termNum;

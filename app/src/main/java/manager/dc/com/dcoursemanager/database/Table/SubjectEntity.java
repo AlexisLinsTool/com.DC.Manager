@@ -4,12 +4,12 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "subject")
+@Entity(tableName = "subject",primaryKeys = {"course_id","term_num"})
 public class SubjectEntity {
 
-    @PrimaryKey
+    @ColumnInfo(name = "course_id")
     public String courseId;
-    @PrimaryKey
+    @ColumnInfo(name = "term_num")
     public int termNum;
     @ColumnInfo(name = "course_name")
     public String courseName;
