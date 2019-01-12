@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "subject",primaryKeys = {"course_id","term_num"})
 public class SubjectEntity {
 
+
     @ColumnInfo(name = "course_id")
     public String courseId;
     @ColumnInfo(name = "term_num")
