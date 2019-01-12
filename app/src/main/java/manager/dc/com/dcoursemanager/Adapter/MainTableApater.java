@@ -6,6 +6,10 @@ import android.widget.BaseAdapter;
 
 public class MainTableApater extends BaseAdapter {
 
+
+    public MainTableApater(){
+
+    }
     @Override
     public int getCount() {
         return 0;
@@ -25,5 +29,5 @@ public class MainTableApater extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         return null;
     }
-    
+
 }

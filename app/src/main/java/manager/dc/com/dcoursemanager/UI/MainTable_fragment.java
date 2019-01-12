@@ -1,9 +1,9 @@
 package manager.dc.com.dcoursemanager.UI;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import manager.dc.com.dcoursemanager.OBJ.Course;
+import manager.dc.com.dcoursemanager.R;
 
 public class MainTable_fragment extends Fragment {
     List<Course> li = new ArrayList<>();
-    View contenView;
+    View contentView;
 
     @Override
     public void onStart() {
@@ -29,7 +30,7 @@ public class MainTable_fragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
-
+        contentView = inflater.inflate(R.layout.fragment_maintable,container,false);
+        return contentView;
     }
 }
