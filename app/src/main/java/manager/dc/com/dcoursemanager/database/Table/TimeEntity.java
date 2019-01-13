@@ -3,7 +3,6 @@ package manager.dc.com.dcoursemanager.database.Table;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 
 @Entity(tableName = "courseTime",primaryKeys = {"year","month","day","course_num","course_id"})
 public class TimeEntity {

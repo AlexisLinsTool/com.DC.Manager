@@ -36,7 +36,7 @@ public class DBUtil {
         ContentValues values = new ContentValues();
         values.put("courseID",course.getCourseID());
         values.put("termNum",course.getTermNum());
-        values.put("courseName",course.getCoourseName());
+        values.put("courseName",course.getCourseName());
         values.put("courseT",course.getCourseT());
         db.insert("course",null,values);
         return Win;

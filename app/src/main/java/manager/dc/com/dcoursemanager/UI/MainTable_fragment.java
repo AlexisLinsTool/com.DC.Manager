@@ -1,6 +1,5 @@
 package manager.dc.com.dcoursemanager.UI;
 
-import android.content.Context;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,25 +7,22 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import manager.dc.com.dcoursemanager.Adapter.BaseFragment;
 import manager.dc.com.dcoursemanager.Adapter.MainTableAdapter;
-import manager.dc.com.dcoursemanager.OBJ.Course;
 import manager.dc.com.dcoursemanager.OBJ.Courses;
 import manager.dc.com.dcoursemanager.R;
 
-public class MainTable_fragment extends Fragment implements MainTableAdapter.MyClickListener {
+public class MainTable_fragment extends BaseFragment implements MainTableAdapter.MyClickListener {
     List<Courses> li = new ArrayList<>();
     View contentView;
     ListView mListView;
-    View v;
     MainTableAdapter mAdapter;
     List<Courses> mList;
-    Context mContext;
 
     @Override
     public void onStart() {
@@ -43,7 +39,8 @@ public class MainTable_fragment extends Fragment implements MainTableAdapter.MyC
         contentView = inflater.inflate(R.layout.fragment_maintable,container,false);
         mListView = contentView.findViewById(R.id.MainTable_List);
         initData();
-        mAdapter = new MainTableAdapter(getActivity(),mList,this);
+        mAdapter = new MainTableAdapter(getContext(),mList,this);
+        mListView.setAdapter(mAdapter);
         return contentView;
     }
 
