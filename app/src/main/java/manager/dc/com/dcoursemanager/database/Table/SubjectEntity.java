@@ -1,17 +1,16 @@
 package manager.dc.com.dcoursemanager.database.Table;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-@Entity(tableName = "subject",primaryKeys = {"course_id","term_num"})
+@Entity(tableName = "subject")
 public class SubjectEntity {
-
-    @NonNull
+    @PrimaryKey
+    public int id;
     @ColumnInfo(name = "course_id")
     public String courseId;
-    @NonNull
     @ColumnInfo(name = "term_num")
     public int termNum;
     @ColumnInfo(name = "course_name")

@@ -12,17 +12,16 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import manager.dc.com.dcoursemanager.Adapter.BaseFragment;
 import manager.dc.com.dcoursemanager.Adapter.MainTableAdapter;
+import manager.dc.com.dcoursemanager.OBJ.Course;
 import manager.dc.com.dcoursemanager.OBJ.Courses;
 import manager.dc.com.dcoursemanager.R;
 
-public class MainTable_fragment extends BaseFragment implements MainTableAdapter.MyClickListener {
+public class MainTable_fragment extends Fragment implements MainTableAdapter.MyClickListener {
     List<Courses> li = new ArrayList<>();
-    View contentView;
     ListView mListView;
     MainTableAdapter mAdapter;
-    List<Courses> mList;
+    List<Courses> mList = new ArrayList<>();
 
     @Override
     public void onStart() {
@@ -36,12 +35,16 @@ public class MainTable_fragment extends BaseFragment implements MainTableAdapter
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        contentView = inflater.inflate(R.layout.fragment_maintable,container,false);
-        mListView = contentView.findViewById(R.id.MainTable_List);
+        return inflater.inflate(R.layout.fragment_maintable,container,false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mListView = view.findViewById(R.id.MainTable_List);
         initData();
-        mAdapter = new MainTableAdapter(getContext(),mList,this);
+        mAdapter = new MainTableAdapter(requireContext(),mList,this);
         mListView.setAdapter(mAdapter);
-        return contentView;
     }
 
     public void initData(){
@@ -49,13 +52,16 @@ public class MainTable_fragment extends BaseFragment implements MainTableAdapter
             Courses c = new Courses();
             mList.add(c);
         }
+        Course c1 = new Course();
     }
 
 
     @Override
     public void clickListener(View v) {
-
-        int postion = (Integer) v.getTag();
+        int postion = ((Integer) v.getTag()).intValue();
+        int termNum = ((Integer) v.getTag(R.id.tag_term_num));
+        int weekNum = ((Integer) v.getTag(R.id.tag_week_num));
+        int courseNum = ((Integer) v.getTag(R.id.tag_course_num));
         switch (v.getId()) {
             case R.id.MainTable_Monday:
                 break;

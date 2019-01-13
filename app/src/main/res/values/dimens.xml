@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="MainTable_H_height">64dp</dimen>
+    <dimen name="MainTable_H_height">20dp</dimen>
     <dimen name="MainTable_D_height">64dp</dimen>
     <dimen name="MainTable_TS_MainSize">10sp</dimen>
+    <dimen name="AddCourseChoose">40dp</dimen>
+    <dimen name="AddCourseMessage">20sp</dimen>
 </resources>

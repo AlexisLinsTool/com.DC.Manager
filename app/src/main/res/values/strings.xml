@@ -8,4 +8,12 @@
     <string name="MianTable_H_1_5">周五</string>
     <string name="MianTable_H_1_6">周六</string>
     <string name="MianTable_H_1_7">周日</string>
+    <string name="Help">Help</string>
+
+    <!--setTag的Key-->
+    <item type="id" name="tag_postion"></item>
+    <item type="id" name="tag_Holder"></item>
+    <item type="id" name="tag_term_num"></item>
+    <item type="id" name="tag_week_num"></item>
+    <item type="id" name="tag_course_num"></item>
 </resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/AddCourse_M_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top|center"
+        android:background="@color/colorBookLike"
+        android:textSize="24sp"
+        android:text="添加课程"/>
+    <TextView
+        android:layout_below="@id/AddCourse_M_title"
+        android:id="@+id/AddCourse_M_termNum"
+        android:gravity="start|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/AddCourseChoose"
+        android:textSize="@dimen/AddCourseMessage"
+        android:text="学期编号:"/>
+    <EditText
+        android:id="@+id/AddCourse_T_termNum"
+        android:layout_below="@id/AddCourse_M_title"
+        android:layout_toEndOf="@id/AddCourse_M_termNum"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/AddCourseChoose"
+        android:hint="当前学期数"/>
+    <TextView
+        android:id="@+id/AddCourse_M_courseID"
+        android:layout_below="@id/AddCourse_T_termNum"
+        android:gravity="start|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/AddCourseChoose"
+        android:textSize="@dimen/AddCourseMessage"
+        android:text="课程编号:"/>
+    <EditText
+        android:id="@+id/AddCourse_T_courseID"
+        android:layout_below="@id/AddCourse_T_termNum"
+        android:layout_toEndOf="@id/AddCourse_M_courseID"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/AddCourseChoose"
+        android:hint="学科编号"/>
+    <TextView
+        android:id="@+id/AddCourse_M_courseName"
+        android:layout_below="@id/AddCourse_T_courseID"
+        android:gravity="start|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/AddCourseChoose"
+        android:textSize="@dimen/AddCourseMessage"
+        android:text="课程名称:"/>
+    <EditText
+        android:id="@+id/AddCourse_T_courseName"
+        android:layout_below="@id/AddCourse_T_courseID"
+        android:layout_toEndOf="@id/AddCourse_M_courseName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/AddCourseChoose"
+        android:hint="学科名称"/>
+    <TextView
+        android:id="@+id/AddCourse_M_courseT"
+        android:layout_below="@id/AddCourse_T_courseName"
+        android:gravity="start|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/AddCourseChoose"
+        android:textSize="@dimen/AddCourseMessage"
+        android:text="任课老师:"/>
+    <EditText
+        android:id="@+id/AddCourse_T_courseT"
+        android:layout_below="@id/AddCourse_T_courseName"
+        android:layout_toEndOf="@id/AddCourse_M_courseT"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/AddCourseChoose"
+        android:hint="老师名字"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/AddCourse_B_AddCourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="添加" />
+
+        <Button
+            android:id="@+id/AddCourse_B_Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="取消" />
+    </RelativeLayout>
+
+</RelativeLayout>
