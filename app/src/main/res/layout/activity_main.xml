@@ -35,12 +35,12 @@
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
     </LinearLayout>
-    <fragment
+    <FrameLayout
         android:id="@+id/Main_frag"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_below="@id/Main_Head"
-        android:layout_above="@id/Main_Bar"></fragment>
+        android:layout_above="@id/Main_Bar"></FrameLayout>
     <LinearLayout
         android:id="@+id/Main_Bar"
         android:layout_width="match_parent"

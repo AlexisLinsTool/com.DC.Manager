@@ -1,5 +1,6 @@
 package manager.dc.com.dcoursemanager.database.Table;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -11,6 +12,7 @@ public class TimeEntity {
     public int day;
     @ColumnInfo(name = "course_num")
     public int courseNum;
+    @NonNull
     @ColumnInfo(name = "course_id")
     public String courseId;
     @ColumnInfo(name = "term_num")

@@ -3,7 +3,7 @@ package manager.dc.com.dcoursemanager.OBJ;
 public class Course {
     int termNum;
     String courseID;
-    String coourseName;
+    String courseName;
     String courseT;
     int weekNum;
     int week;
@@ -43,8 +43,8 @@ public class Course {
         return courseT;
     }
 
-    public String getCoourseName() {
-        return coourseName;
+    public String getCourseName() {
+        return courseName;
     }
 
     public void setNote(String note) {
@@ -79,7 +79,7 @@ public class Course {
         this.courseT = courseT;
     }
 
-    public void setCoourseName(String coourseName) {
-        this.coourseName = coourseName;
+    public void setCoourseName(String courseName) {
+        this.courseName = courseName;
     }
 }

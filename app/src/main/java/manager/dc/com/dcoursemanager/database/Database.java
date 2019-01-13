@@ -5,10 +5,12 @@ import android.app.Application;
 
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import manager.dc.com.dcoursemanager.database.Dao.SubjectDao;
+import manager.dc.com.dcoursemanager.database.Dao.TimeDao;
 import manager.dc.com.dcoursemanager.database.Table.SubjectEntity;
 import manager.dc.com.dcoursemanager.database.Table.TimeEntity;
 
-@androidx.room.Database(entities = {SubjectEntity.class,TimeEntity.class},version = 1)
+@androidx.room.Database(entities = {SubjectEntity.class,TimeEntity.class},version = 1,exportSchema = false)
 public abstract class Database extends RoomDatabase {
     /**
      * DatebaseName
@@ -52,11 +54,11 @@ public abstract class Database extends RoomDatabase {
      * 获取subjectDao的实例
      * @return SubjectDao实例
      */
-    public abstract Database getSubjectDao();
+    public abstract SubjectDao getSubjectDao();
 
     /**
      * 获取TimeDao的实例
      * @return TimeDao实例
      */
-    public abstract Database getTimeDao();
+    public abstract TimeDao getTimeDao();
 }

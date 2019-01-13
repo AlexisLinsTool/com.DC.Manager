@@ -12,6 +12,7 @@
         android:singleLine="false"
         android:gravity="center"
         android:text="1"
+        android:layout_margin="1dp"
         android:textSize="@dimen/MainTable_TS_MainSize" />
     <TextView
         android:id="@+id/MainTable_Monday"
@@ -22,6 +23,8 @@
         android:text="课程名字"
         android:textSize="@dimen/MainTable_TS_MainSize"
         android:focusable="true"
+        android:layout_margin="1dp"
+        android:background="@color/colorBookLike"
         android:layout_weight="1"/>
     <TextView
         android:id="@+id/MainTable_Tuesday"
@@ -32,6 +35,8 @@
         android:text="课程名字"
         android:textSize="@dimen/MainTable_TS_MainSize"
         android:focusable="true"
+        android:layout_margin="1dp"
+        android:background="@color/colorBookLike"
         android:layout_weight="1"/>
     <TextView
         android:id="@+id/MainTable_Wednesday"
@@ -42,6 +47,8 @@
         android:text="课程名字"
         android:textSize="@dimen/MainTable_TS_MainSize"
         android:focusable="true"
+        android:layout_margin="1dp"
+        android:background="@color/colorBookLike"
         android:layout_weight="1"/>
     <TextView
         android:id="@+id/MainTable_Thursday"
@@ -52,6 +59,8 @@
         android:text="课程名字"
         android:textSize="@dimen/MainTable_TS_MainSize"
         android:focusable="true"
+        android:layout_margin="1dp"
+        android:background="@color/colorBookLike"
         android:layout_weight="1"/>
     <TextView
         android:id="@+id/MainTable_Friday"
@@ -62,6 +71,8 @@
         android:text="课程名字"
         android:textSize="@dimen/MainTable_TS_MainSize"
         android:focusable="true"
+        android:layout_margin="1dp"
+        android:background="@color/colorBookLike"
         android:layout_weight="1"/>
 
     <TextView
@@ -73,6 +84,8 @@
         android:text="课程名字"
         android:textSize="@dimen/MainTable_TS_MainSize"
         android:focusable="true"
+        android:layout_margin="1dp"
+        android:background="@color/colorBookLike"
         android:layout_weight="1"/>
     <TextView
         android:id="@+id/MainTable_Sunday"
@@ -83,5 +96,8 @@
         android:text="课程名字"
         android:textSize="@dimen/MainTable_TS_MainSize"
         android:focusable="true"
+        android:layout_margin="1dp"
+        android:background="@color/colorBookLike"
         android:layout_weight="1"/>
+
 </LinearLayout>
