@@ -58,7 +58,7 @@ public class MainTableAdapter extends BaseAdapter implements View.OnClickListene
         mHolder = new ViewHolder();
         if (view == null) {
 
-            view = LayoutInflater.from(mContext).inflate(R.layout.fragment_maintale_listview,viewGroup,false);
+            view = LayoutInflater.from(mContext).inflate(R.layout.list_maintale_listview,viewGroup,false);
 
             mHolder.t0 = view.findViewById(R.id.MainTable_Protion);
             mHolder.t1 = view.findViewById(R.id.MainTable_Monday);
@@ -103,7 +103,7 @@ public class MainTableAdapter extends BaseAdapter implements View.OnClickListene
 
     @SuppressLint("ResourceAsColor")
     private void setDataAs(TextView view, int postion, Course course){
-        view.setText(mList.get(postion).getW1().getCourseName());
+        view.setText(course.getCourseName());
         view.setBackgroundColor(R.color.colorBookLike);
         view.setOnClickListener(this);
         view.setTag(R.id.tag_postion,postion);

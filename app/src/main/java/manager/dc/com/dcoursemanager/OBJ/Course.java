@@ -79,7 +79,7 @@ public class Course {
         this.courseT = courseT;
     }
 
-    public void setCoourseName(String courseName) {
+    public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
 }

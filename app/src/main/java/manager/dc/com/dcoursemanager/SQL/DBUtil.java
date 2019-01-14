@@ -78,7 +78,7 @@ public class DBUtil {
                 c.setCourseNum(cursor.getInt(cursor.getColumnIndex("courseNum")));
                 Cursor cursor1 = db.query("course",null,"courseID = ?", new String[]{""+c.getCourseID()},null,null,null);
                 cursor1.moveToFirst();
-                c.setCoourseName(cursor1.getString(cursor1.getColumnIndex("courseName")));
+                c.setCourseName(cursor1.getString(cursor1.getColumnIndex("courseName")));
                 c.setCourseT(cursor1.getString(cursor1.getColumnIndex("courseT")));
                 li.add(c);
             }while(cursor.moveToNext());

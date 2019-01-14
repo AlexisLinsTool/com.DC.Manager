@@ -48,11 +48,10 @@ public class MainTable_fragment extends Fragment implements MainTableAdapter.MyC
     }
 
     public void initData(){
-        for(int i = 0;i<8;i++){
+        for(int i = 0;i<12;i++){
             Courses c = new Courses();
             mList.add(c);
         }
-        Course c1 = new Course();
     }
 
 
