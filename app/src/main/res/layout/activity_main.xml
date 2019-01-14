@@ -60,11 +60,11 @@
             android:layout_weight="1"
             android:text="查看课程"/>
         <Button
-            android:id="@+id/Main_B_EXIT"
+            android:id="@+id/Main_B_Alarm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="退出"/>
+            android:text="闹钟"/>
     </LinearLayout>
 
 </RelativeLayout>

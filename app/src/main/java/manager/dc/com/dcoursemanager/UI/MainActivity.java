@@ -17,6 +17,7 @@ import manager.dc.com.dcoursemanager.UI.AddAndSee.SeeCourseActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button addCourse;
     Button seeConrse;
+    Button alarm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addCourse.setOnClickListener(this);
         seeConrse = findViewById(R.id.Main_B_SeeCourse);
         seeConrse.setOnClickListener(this);
+        alarm = findViewById(R.id.Main_B_Alarm);
         ((EditText)findViewById(R.id.Main_WeekNow)).setText("1");
         FragmentManager fram = getSupportFragmentManager();
         FragmentTransaction trans = fram.beginTransaction();

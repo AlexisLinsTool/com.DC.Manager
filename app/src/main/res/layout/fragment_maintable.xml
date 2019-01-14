@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -59,12 +60,12 @@
             android:text="@string/MianTable_H_1_7"
             android:layout_weight="1"/>
     </LinearLayout>
+
     <ListView
         android:id="@+id/MainTable_List"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/table_background1">
-
+        android:background="@mipmap/table_background2">
     </ListView>
 
 </LinearLayout>
