@@ -23,6 +23,11 @@ public class AddCourseActivity extends AppCompatActivity implements View.OnClick
 
     private static final int MSG_ADDED = 1;
 
+    EditText TtermNum;
+    EditText TcourseId;
+    EditText TcourseName;
+    EditText TcourseT;
+
     Button AddCourse;
     Button Cancel;
 
@@ -33,6 +38,12 @@ public class AddCourseActivity extends AppCompatActivity implements View.OnClick
         if (getSupportActionBar() != null){
             getSupportActionBar().hide();
         }
+
+        TtermNum = findViewById(R.id.AddCourse_T_termNum);
+        TcourseId = findViewById(R.id.AddCourse_T_courseID);
+        TcourseName = findViewById(R.id.AddCourse_T_courseName);
+        TcourseT = findViewById(R.id.AddCourse_T_courseT);
+
         Cancel = findViewById(R.id.AddCourse_B_Cancel);
         Cancel.setOnClickListener(this);
         AddCourse = findViewById(R.id.AddCourse_B_AddCourse);
@@ -41,43 +52,48 @@ public class AddCourseActivity extends AppCompatActivity implements View.OnClick
 
     @SuppressLint("HandlerLeak")
     private Handler mHandler = new Handler() {
-        public void handleMessage(Message msg) {//此方法在ui线程运行
+        public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MSG_ADDED:
                     Toast.makeText(AddCourseActivity.this,"加入成功",Toast.LENGTH_SHORT).show();
+                    TtermNum.setText("");TcourseId.setText("");TcourseName.setText("");TcourseT.setText("");
                     break;
             }
         }
     };
     private void AddCourse(){
-        Database.init(getApplication());
-        Database db = Database.getsInstance();
-        final SubjectDao subjectDao = db.getSubjectDao();
         boolean check = true;
         int termNum = 0;
-        if("".equals(((EditText)findViewById(R.id.AddCourse_T_termNum)).toString()))
+        if("".equals(TtermNum.getText().toString()))
             check = false;
         else {
-            termNum = Integer.valueOf(((EditText)findViewById(R.id.AddCourse_T_termNum)).getText().toString());
+            termNum = Integer.valueOf(TtermNum.getText().toString());
         }
-        final String courseName = ((EditText)findViewById(R.id.AddCourse_T_courseName)).toString();
-        final String courseID = ((EditText)findViewById(R.id.AddCourse_T_courseID)).toString();
-        final String courseT = ((EditText)findViewById(R.id.AddCourse_T_courseT)).toString();
+        final String courseName = TcourseName.getText().toString();
+        final String courseID = TcourseId.getText().toString();
+        final String courseT = TcourseT.getText().toString();
         if("".equals(courseID)||"".equals(courseName)||"".equals(courseT)) {
             check = false;
         }
         if(check) {
+            Database.init(getApplication());
             final int finalTermNum = termNum;
             new Thread(new Runnable() {
                 @Override
                 public void run() {
+                    SubjectDao subjectDao = Database.getsInstance().getSubjectDao();
                     SubjectEntity subjectEntity = new SubjectEntity();
                     subjectEntity.setCourseId(courseID);
                     subjectEntity.setCourseName(courseName);
                     subjectEntity.setCourseTeacher(courseT);
                     subjectEntity.setTermNum(finalTermNum);
                     subjectDao.add(subjectEntity);
-                    Log.d("ADDED","Done");
+
+                    Log.d("AddSubject",courseID+"=="+courseName+"=="+courseT+"==");
+                    Message m = new Message();
+                    m.what = MSG_ADDED;
+                    mHandler.sendMessageAtFrontOfQueue(m);
+
                 }
             }).start();
         }

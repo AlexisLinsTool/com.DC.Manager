@@ -23,6 +23,7 @@ public interface SubjectDao {
 
     @Query("select distinct course_name from subject where term_num =:termNum")
     List<String> getAllCourseNanmeByTermNum(int termNum);
+
     @Insert
     void add(SubjectEntity entity);
 

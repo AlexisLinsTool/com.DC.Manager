@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import manager.dc.com.dcoursemanager.Adapter.MainTableAdapter;
-import manager.dc.com.dcoursemanager.OBJ.Course;
 import manager.dc.com.dcoursemanager.OBJ.Courses;
 import manager.dc.com.dcoursemanager.R;
 
@@ -43,7 +42,8 @@ public class MainTable_fragment extends Fragment implements MainTableAdapter.MyC
         super.onViewCreated(view, savedInstanceState);
         mListView = view.findViewById(R.id.MainTable_List);
         initData();
-        mAdapter = new MainTableAdapter(requireContext(),mList,this);
+        //requireContext()
+        mAdapter = new MainTableAdapter(getActivity().getApplicationContext(),mList,this);
         mListView.setAdapter(mAdapter);
     }
 

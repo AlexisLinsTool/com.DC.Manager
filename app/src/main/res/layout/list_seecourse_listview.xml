@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/SeeCourse_Part1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -13,34 +14,43 @@
             android:id="@+id/seeCourse_termNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/AddCourseMessage"
             android:text="学期编号"
             android:layout_weight="1"/>
         <TextView
             android:id="@+id/seeCourse_courseID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/AddCourseMessage"
             android:text="课程编号"
             android:layout_weight="1"/>
         <TextView
             android:id="@+id/seeCourse_courseName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/AddCourseMessage"
             android:text="课程名字"
             android:layout_weight="3"/>
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/SeeCourse_Part2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/SeeCourse_Part1"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/AddCourseMessage"
             android:text="老师名字："/>
         <TextView
             android:id="@+id/seeCourse_courseT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/AddCourseMessage"
             android:text="老师名字"/>
 
     </LinearLayout>
