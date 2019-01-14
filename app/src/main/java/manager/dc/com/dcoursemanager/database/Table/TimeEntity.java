@@ -10,49 +10,21 @@ public class TimeEntity {
 
     @PrimaryKey(autoGenerate = true)
     public long id;
-    @ColumnInfo(name = "year")
-    public int year;
-    @ColumnInfo(name = "month")
-    public int month;
-    @ColumnInfo(name = "day")
-    public int day;
     @ColumnInfo(name = "course_num")
     public int courseNum;
-    @NonNull
     @ColumnInfo(name = "course_id")
     public String courseId;
     @ColumnInfo(name = "term_num")
     public int termNum;
     @ColumnInfo(name = "week")
     public int week;
+    @ColumnInfo(name = "week_num")
+    public int weekNum;
     @ColumnInfo(name = "address")
     public String address;
     @ColumnInfo(name = "note")
     public String note;
 
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public int getMonth() {
-        return month;
-    }
-
-    public void setMonth(int month) {
-        this.month = month;
-    }
-
-    public int getDay() {
-        return day;
-    }
-
-    public void setDay(int day) {
-        this.day = day;
-    }
 
     public int getCourseNum() {
         return courseNum;

@@ -1,16 +1,17 @@
 package manager.dc.com.dcoursemanager.UI.AddAndSee;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-
-import javax.security.auth.login.LoginException;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,8 @@ import manager.dc.com.dcoursemanager.R;
 import manager.dc.com.dcoursemanager.database.Dao.SubjectDao;
 import manager.dc.com.dcoursemanager.database.Database;
 import manager.dc.com.dcoursemanager.database.Table.SubjectEntity;
+
+import static android.widget.AdapterView.*;
 
 public class SeeCourseActivity extends AppCompatActivity {
 
@@ -36,6 +39,8 @@ public class SeeCourseActivity extends AppCompatActivity {
                 case MSG_GETALLLIST:
                     mlist.addAll((List<SubjectEntity>)msg.obj);
                     mAdapter.notifyDataSetChanged();
+                    if(mlist.size() == 0)
+                        Toast.makeText(getApplicationContext(),"您还没有添加任何课程呢",Toast.LENGTH_SHORT).show();
                     break;
             }
         }
@@ -55,12 +60,20 @@ public class SeeCourseActivity extends AppCompatActivity {
         mAdapter = new SeeCourseAdapter(this.getApplicationContext(),R.layout.list_seecourse_listview, mlist);
         listView = findViewById(R.id.SeeCourse_ListView);
         listView.setAdapter(mAdapter);
+        listView.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                SubjectEntity entity = mlist.get(position);
+                Intent intent = new Intent(SeeCourseActivity.this,AddCourseTimeActivity.class);
+                intent.putExtra("Subject",entity.getId());
+                startActivity(intent);
+            }
+        });
     }
 
     private void getAll() {
         Database.init(this.getApplication());
         new Thread(new Runnable() {
-
             @Override
             public void run() {
                 List<SubjectEntity> li;

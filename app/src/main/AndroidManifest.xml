@@ -21,9 +21,7 @@
         </activity>
         <activity android:name=".UI.AddAndSee.AddCourseActivity"/>
         <activity android:name=".UI.AddAndSee.SeeCourseActivity"/>
-
-        <receiver android:name=".alarm.SubjectAlarmReceiver"
-            />
+        <activity android:name=".UI.AddAndSee.AddCourseTimeActivity"/>
     </application>
 
 </manifest>

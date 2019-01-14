@@ -6,65 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.MainActivity">
-    <LinearLayout
-        android:id="@+id/Main_Head"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="当前周:"/>
-        <EditText
-            android:id="@+id/Main_WeekNow"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:id="@+id/Main_B_Jump2Week"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="查找"/>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/app_name500"
-                android:layout_alignParentRight="true"/>
-        </RelativeLayout>
-    </LinearLayout>
     <FrameLayout
         android:id="@+id/Main_frag"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_below="@id/Main_Head"
-        android:layout_above="@id/Main_Bar"></FrameLayout>
-    <LinearLayout
-        android:id="@+id/Main_Bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true">
-        <Button
-            android:id="@+id/Main_B_AddCourse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="添加课程"/>
-        <Button
-            android:id="@+id/Main_B_SeeCourse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="查看课程"/>
-        <Button
-            android:id="@+id/Main_B_Alarm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="闹钟"/>
-    </LinearLayout>
+        android:layout_height="match_parent"></FrameLayout>
 
 </RelativeLayout>

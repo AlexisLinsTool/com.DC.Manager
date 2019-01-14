@@ -16,4 +16,5 @@
     <item type="id" name="tag_term_num"></item>
     <item type="id" name="tag_week_num"></item>
     <item type="id" name="tag_course_num"></item>
+    <item type="id" name="tag_course"></item>
 </resources>

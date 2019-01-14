@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "subject")
 public class SubjectEntity {
 
+
     @PrimaryKey(autoGenerate = true)
     public long id;
     @ColumnInfo(name = "course_id")
@@ -17,6 +18,8 @@ public class SubjectEntity {
     public String courseName;
     @ColumnInfo(name = "course_teacher")
     public String courseTeacher;
+
+    public long getId() { return id; }
 
     public String getCourseId() {
         return courseId;

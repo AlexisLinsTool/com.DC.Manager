@@ -18,10 +18,20 @@ public interface TimeDao {
     @Query("select * from courseTime where term_num =:termNum and week =:week")
     List<TimeEntity> getCourseTimeByWeek(int termNum,int week);
 
-    @Query("select * from courseTime where term_num =:termNum and year =:year and month" +
-            "=:month and day =:day and course_num =:courseNum")
-    TimeEntity getCourseTimeByCourseNum(int termNum,int year,int month,int day,int courseNum);
+    @Query("select * from courseTime where term_num =:termNum and course_num =:courseNum")
+    TimeEntity getCourseTimeByCourseNum(int termNum,int courseNum);
 
+    @Query("select * from courseTime where course_id = :courseId" +
+            " group by (term_num and week_num and course_num)")
+    List<TimeEntity> getUnqiueTimeByCourseNum(int termNum,int courseId);
+
+    @Query("select Max(week) from courseTime where course_num =:courseNum and week_num =:weekNum " +
+            "and course_id =:courseId")
+    int getMaxWeekByCourseNumAndWeekNumAndCourseId(int courseNum, int weekNum, int courseId);
+
+    @Query("select Min(week) from courseTime where course_num =:courseNum and week_num =:weekNum " +
+            "and course_id =:courseId")
+    int getMinWeekByCourseNumAndWeekNumAndCourseId(int courseNum, int weekNum, int courseId);
 
     @Insert
     void add(TimeEntity entity);
@@ -34,4 +44,5 @@ public interface TimeDao {
 
     @Query("Update courseTime set note =:note")
     void updateNoteByCourseTime(String note);
+
 }
