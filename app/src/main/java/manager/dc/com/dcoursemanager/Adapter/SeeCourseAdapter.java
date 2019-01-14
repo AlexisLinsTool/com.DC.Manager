@@ -4,65 +4,60 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.logging.Handler;
+
+import androidx.constraintlayout.solver.LinearSystem;
 import manager.dc.com.dcoursemanager.R;
 import manager.dc.com.dcoursemanager.database.Table.SubjectEntity;
 
-public class SeeCourseAdapter extends BaseAdapter {
+public class SeeCourseAdapter extends ArrayAdapter<SubjectEntity> {
     List<SubjectEntity> mList;
     Context mContext;
     View view;
+    SubjectEntity entity;
     Holder mHolder;
+    int resourceId;
 
-    public SeeCourseAdapter(Context context, List<SubjectEntity> list){
-        mList = list;
+    public SeeCourseAdapter(Context context,int ResourceId,List<SubjectEntity> list){
+        super(context,ResourceId,list);
         mContext = context;
-    }
-    @Override
-    public int getCount() {
-        return 0;
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return null;
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return 0;
+        resourceId = ResourceId;
+        mList = list;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         mHolder = new Holder();
-        if(view == null){
-            view = LayoutInflater.from(mContext).inflate(R.layout.list_maintale_listview,parent,false);
-            mHolder.termNum = convertView.findViewById(R.id.seeCourse_termNum);
-            mHolder.courseID = convertView.findViewById(R.id.seeCourse_courseID);
-            mHolder.courseName = convertView.findViewById(R.id.seeCourse_courseName);
-            mHolder.courseT = convertView.findViewById(R.id.seeCourse_courseT);
+        entity = getItem(position);
+        if(convertView == null){
+            view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
+            mHolder.termNum = view.findViewById(R.id.seeCourse_termNum);
+            mHolder.courseId = view.findViewById(R.id.seeCourse_courseID);
+            mHolder.courseName = view.findViewById(R.id.seeCourse_courseName);
+            mHolder.courseT = view.findViewById(R.id.seeCourse_courseT);
             view.setTag(mHolder);
         }else{
-            mHolder = (Holder)view.getTag();
+            view = convertView;
+            mHolder = (Holder) view.getTag();
         }
         initDate(position);
         return view;
     }
 
-    private void initDate(int position){
-        mHolder.termNum.setText(mList.get(position).getTermNum());
-        mHolder.courseID.setText(mList.get(position).getCourseId());
-        mHolder.courseName.setText(mList.get(position).getCourseName());
-        mHolder.courseT.setText(mList.get(position).getCourseTeacher());
+    private void initDate(int postion){
+        mHolder.termNum.setText(String.valueOf(mList.get(postion).getTermNum()));
+        mHolder.courseId.setText(mList.get(postion).getCourseId());
+        mHolder.courseName.setText(mList.get(postion).getCourseName());
+        mHolder.courseT.setText(mList.get(postion).getCourseTeacher());
     }
 
     class Holder{
         TextView termNum;
-        TextView courseID;
+        TextView courseId;
         TextView courseName;
         TextView courseT;
     }

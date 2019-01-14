@@ -104,14 +104,13 @@ public class MainTableAdapter extends BaseAdapter implements View.OnClickListene
     @SuppressLint("ResourceAsColor")
     private void setDataAs(TextView view, int postion, Course course){
         view.setText(course.getCourseName());
-        view.setBackgroundColor(R.color.colorBookLike);
+        view.setBackgroundResource(R.mipmap.table_card1);
         view.setOnClickListener(this);
         view.setTag(R.id.tag_postion,postion);
         view.setTag(R.id.tag_term_num,course.getTermNum());
         view.setTag(R.id.tag_week_num,course.getWeekNum());
         view.setTag(R.id.tag_course_num,course.getCourseNum());
     }
-
 
 
     class ViewHolder {

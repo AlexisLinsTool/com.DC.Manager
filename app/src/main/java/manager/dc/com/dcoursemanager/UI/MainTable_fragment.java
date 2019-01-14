@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import manager.dc.com.dcoursemanager.Adapter.MainTableAdapter;
@@ -17,6 +18,7 @@ import manager.dc.com.dcoursemanager.OBJ.Courses;
 import manager.dc.com.dcoursemanager.R;
 
 public class MainTable_fragment extends Fragment implements MainTableAdapter.MyClickListener {
+    Calendar calendar;
     List<Courses> li = new ArrayList<>();
     ListView mListView;
     MainTableAdapter mAdapter;
@@ -40,9 +42,10 @@ public class MainTable_fragment extends Fragment implements MainTableAdapter.MyC
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        calendar = Calendar.getInstance();
+        calendar.set(2018,9,1);
         mListView = view.findViewById(R.id.MainTable_List);
         initData();
-        //requireContext()
         mAdapter = new MainTableAdapter(getActivity().getApplicationContext(),mList,this);
         mListView.setAdapter(mAdapter);
     }
@@ -53,7 +56,6 @@ public class MainTable_fragment extends Fragment implements MainTableAdapter.MyC
             mList.add(c);
         }
     }
-
 
     @Override
     public void clickListener(View v) {

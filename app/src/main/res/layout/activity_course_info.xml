@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:id="@+id/courseInfo_T_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
         android:gravity="center"
         android:layout_gravity="top"
+        android:text="课程小记"/>
+    <TextView
+        android:id="@+id/courseInfo_M_courseName"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/courseInfo_T_title"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/AddCourseChoose"
+        android:textSize="@dimen/AddCourseMessage"
+        android:gravity="start|bottom"
+        android:text="课程名字："/>
+    <TextView
+        android:id="@+id/courseInfo_T_courseName"
+        android:layout_toEndOf="@id/courseInfo_M_courseName"
+        android:layout_below="@id/courseInfo_T_title"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/AddCourseChoose"
+        android:textSize="@dimen/AddCourseMessage"
+        android:gravity="start|bottom"
         android:text="课程名字"/>
-</LinearLayout>
+    <TextView
+        android:layout_width="1dp"
+        android:layout_below="@id/courseInfo_T_title"
+        android:layout_height="@dimen/AddCourseChoose"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/AddCourseChoose" />
+</RelativeLayout>

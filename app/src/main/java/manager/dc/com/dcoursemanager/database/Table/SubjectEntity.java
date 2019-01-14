@@ -49,4 +49,15 @@ public class SubjectEntity {
     public void setCourseTeacher(String courseTeacher) {
         this.courseTeacher = courseTeacher;
     }
+
+    @Override
+    public String toString() {
+        return "SubjectEntity{" +
+                "id=" + id +
+                ", courseId='" + courseId + '\'' +
+                ", termNum=" + termNum +
+                ", courseName='" + courseName + '\'' +
+                ", courseTeacher='" + courseTeacher + '\'' +
+                '}';
+    }
 }
