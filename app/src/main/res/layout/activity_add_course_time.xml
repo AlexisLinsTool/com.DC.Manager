@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/AddCourseTime_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlueDemo1"
+        android:gravity="top|center"
+        android:text="课程名称"/>
+    <ListView
+        android:id="@+id/AddCourseTime_Listview_old"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/AddCourseTime_title"
+        android:layout_above="@id/AddCourseTime_B_AddNew"></ListView>
+    <Button
+        android:id="@+id/AddCourseTime_B_AddNew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="添加新的时间段"/>
+</RelativeLayout>

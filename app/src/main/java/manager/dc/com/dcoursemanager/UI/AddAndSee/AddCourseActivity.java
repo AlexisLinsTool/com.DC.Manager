@@ -14,7 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import manager.dc.com.dcoursemanager.R;
-import manager.dc.com.dcoursemanager.UI.MainActivity;
+import manager.dc.com.dcoursemanager.UI.home.MainActivity;
 import manager.dc.com.dcoursemanager.database.Dao.SubjectDao;
 import manager.dc.com.dcoursemanager.database.Database;
 import manager.dc.com.dcoursemanager.database.Table.SubjectEntity;

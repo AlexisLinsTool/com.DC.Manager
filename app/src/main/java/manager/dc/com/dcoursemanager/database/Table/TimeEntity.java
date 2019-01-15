@@ -13,11 +13,12 @@ public class TimeEntity {
     @ColumnInfo(name = "course_num")
     public int courseNum;
     @ColumnInfo(name = "course_id")
-    public String courseId;
+    public long courseId;
     @ColumnInfo(name = "term_num")
     public int termNum;
     @ColumnInfo(name = "week")
     public int week;
+
     @ColumnInfo(name = "week_num")
     public int weekNum;
     @ColumnInfo(name = "address")
@@ -34,11 +35,11 @@ public class TimeEntity {
         this.courseNum = courseNum;
     }
 
-    public String getCourseId() {
+    public long getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(String courseId) {
+    public void setCourseId(long courseId) {
         this.courseId = courseId;
     }
 
@@ -72,5 +73,23 @@ public class TimeEntity {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public int getWeekNum() {  return weekNum; }
+
+    public void setWeekNum(int weekNum) { this.weekNum = weekNum; }
+
+    @Override
+    public String toString() {
+        return "TimeEntity{" +
+                "id=" + id +
+                ", courseNum=" + courseNum +
+                ", courseId='" + courseId + '\'' +
+                ", termNum=" + termNum +
+                ", week=" + week +
+                ", weekNum=" + weekNum +
+                ", address='" + address + '\'' +
+                ", note='" + note + '\'' +
+                '}';
     }
 }

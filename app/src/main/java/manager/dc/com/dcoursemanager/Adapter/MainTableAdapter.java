@@ -72,7 +72,22 @@ public class MainTableAdapter extends BaseAdapter implements View.OnClickListene
         } else {
             mHolder = (ViewHolder) view.getTag(R.id.tag_Holder);
         }
+        view.setTag(R.id.tag_postion,position);
         mHolder.t0.setText(String.valueOf(position+1));
+        mHolder.t1.setOnClickListener(this);
+        mHolder.t1.setTag(R.id.tag_postion,position);
+        mHolder.t2.setOnClickListener(this);
+        mHolder.t2.setTag(R.id.tag_postion,position);
+        mHolder.t3.setOnClickListener(this);
+        mHolder.t3.setTag(R.id.tag_postion,position);
+        mHolder.t4.setOnClickListener(this);
+        mHolder.t4.setTag(R.id.tag_postion,position);
+        mHolder.t5.setOnClickListener(this);
+        mHolder.t5.setTag(R.id.tag_postion,position);
+        mHolder.t6.setOnClickListener(this);
+        mHolder.t6.setTag(R.id.tag_postion,position);
+        mHolder.t7.setOnClickListener(this);
+        mHolder.t7.setTag(R.id.tag_postion,position);
         setData(position);
         return view;
     }
@@ -105,9 +120,7 @@ public class MainTableAdapter extends BaseAdapter implements View.OnClickListene
     private void setDataAs(TextView view, int postion, Course course){
         view.setText(course.getCourseName());
         view.setBackgroundResource(R.mipmap.table_card1);
-        view.setOnClickListener(this);
         view.setTag(R.id.tag_postion,postion);
-        view.setTag(R.id.tag_course,course);
     }
 
 

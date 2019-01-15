@@ -125,6 +125,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
         <Button
+            android:id="@+id/courseInfo_B_saveChange"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="修改笔记"/>

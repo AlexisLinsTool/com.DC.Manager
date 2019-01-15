@@ -1,5 +1,6 @@
 package manager.dc.com.dcoursemanager.UI.AddAndSee;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -21,8 +22,6 @@ import manager.dc.com.dcoursemanager.database.Dao.SubjectDao;
 import manager.dc.com.dcoursemanager.database.Database;
 import manager.dc.com.dcoursemanager.database.Table.SubjectEntity;
 
-import static android.widget.AdapterView.*;
-
 public class SeeCourseActivity extends AppCompatActivity {
 
     private static final String TAG = SeeCourseActivity.class.getSimpleName();
@@ -31,20 +30,20 @@ public class SeeCourseActivity extends AppCompatActivity {
     ListView listView;
     List<SubjectEntity> mlist = new ArrayList<>();
 
+    @SuppressLint("HandlerLeak")
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what) {
                 case MSG_GETALLLIST:
-                    mlist.addAll((List<SubjectEntity>)msg.obj);
+                    mlist.addAll((List<SubjectEntity>) msg.obj);
                     mAdapter.notifyDataSetChanged();
-                    if(mlist.size() == 0)
-                        Toast.makeText(getApplicationContext(),"您还没有添加任何课程呢",Toast.LENGTH_SHORT).show();
+                    if (mlist.size() == 0)
+                        Toast.makeText(getApplicationContext(), "您还没有添加任何课程呢", Toast.LENGTH_SHORT).show();
                     break;
             }
         }
-
     };
 
     private SeeCourseAdapter mAdapter;
@@ -53,22 +52,25 @@ public class SeeCourseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_see_course);
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-        getAll();
-        mAdapter = new SeeCourseAdapter(this.getApplicationContext(),R.layout.list_seecourse_listview, mlist);
+
         listView = findViewById(R.id.SeeCourse_ListView);
-        listView.setAdapter(mAdapter);
-        listView.setOnItemClickListener(new OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.e(TAG, "onItemClick:");
                 SubjectEntity entity = mlist.get(position);
-                Intent intent = new Intent(SeeCourseActivity.this,AddCourseTimeActivity.class);
-                intent.putExtra("Subject",entity.getId());
+                Intent intent = new Intent(SeeCourseActivity.this, AddCourseTimeActivity.class);
+                intent.putExtra("Subject", entity.getId());
                 startActivity(intent);
             }
         });
+        mAdapter = new SeeCourseAdapter(getApplicationContext(),R.layout.list_seecourse_listview,mlist);
+        listView.setAdapter(mAdapter);
+        getAll();
     }
 
     private void getAll() {

@@ -26,7 +26,7 @@ public abstract class Database extends RoomDatabase {
      * 内部进行初始化
      * @param application a
      */
-    public static void init(Application application){
+    public static Database init(Application application){
         if(sInstance == null){
             synchronized (Application.class){
                 if(sInstance == null){
@@ -34,6 +34,7 @@ public abstract class Database extends RoomDatabase {
                 }
             }
         }
+        return null;
     }
 
     /**

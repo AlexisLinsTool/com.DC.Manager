@@ -5,4 +5,5 @@
     <dimen name="MainTable_TS_MainSize">10sp</dimen>
     <dimen name="AddCourseChoose">40dp</dimen>
     <dimen name="AddCourseMessage">20sp</dimen>
+    <dimen name="AddcourseTime_MWidth">120dp</dimen>
 </resources>

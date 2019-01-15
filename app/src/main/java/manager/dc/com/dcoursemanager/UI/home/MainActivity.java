@@ -1,4 +1,4 @@
-package manager.dc.com.dcoursemanager.UI;
+package manager.dc.com.dcoursemanager.UI.home;
 
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;

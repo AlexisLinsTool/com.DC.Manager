@@ -23,15 +23,23 @@ public interface TimeDao {
 
     @Query("select * from courseTime where course_id = :courseId" +
             " group by (term_num and week_num and course_num)")
-    List<TimeEntity> getUnqiueTimeByCourseNum(int termNum,int courseId);
+    List<TimeEntity> getUnqiueTimeByCourseNum(long courseId);
 
     @Query("select Max(week) from courseTime where course_num =:courseNum and week_num =:weekNum " +
             "and course_id =:courseId")
-    int getMaxWeekByCourseNumAndWeekNumAndCourseId(int courseNum, int weekNum, int courseId);
+    int getMaxWeekByCourseNumAndWeekNumAndCourseId(int courseNum, int weekNum, long courseId);
 
     @Query("select Min(week) from courseTime where course_num =:courseNum and week_num =:weekNum " +
             "and course_id =:courseId")
-    int getMinWeekByCourseNumAndWeekNumAndCourseId(int courseNum, int weekNum, int courseId);
+    int getMinWeekByCourseNumAndWeekNumAndCourseId(int courseNum, int weekNum, long courseId);
+
+    @Query("select note from courseTime where week =:week and week_num =:weekNum " +
+            "and course_num =:courseNum and term_num =:termNum limit 0,1")
+    String getNoteByWeekNumAndWeekAndCourseNumAndTermNum(int week, int weekNum, int courseNum,int termNum);
+
+    @Query("select * from courseTime where week =:week and week_num =:weekNum " +
+            "and course_num =:courseNum and term_num =:termNum limit 0,1")
+    TimeEntity getOneByWeekNumAndWeekAndCourseNumAndTermNum(int week, int weekNum, int courseNum,int termNum);
 
     @Insert
     void add(TimeEntity entity);

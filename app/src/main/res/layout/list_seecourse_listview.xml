@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="80dp"
     android:background="@mipmap/table_course_info">
+
 
     <LinearLayout
         android:id="@+id/SeeCourse_Part1"
@@ -23,7 +23,6 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/AddCourseMessage"
             android:text="学期编号"
-            android:autoLink="all"
             android:layout_weight="1"/>
         <TextView
             android:id="@+id/seeCourse_M_courseID"
@@ -37,7 +36,6 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/AddCourseMessage"
             android:text="课程编号"
-            android:autoLink="all"
             android:layout_weight="1"/>
         <TextView
             android:id="@+id/seeCourse_courseName"
@@ -66,7 +64,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/AddCourseMessage"
-            android:autoLink="all"
             android:text="老师名字"/>
 
     </LinearLayout>

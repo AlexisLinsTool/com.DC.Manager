@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme"
         >
         <activity
-            android:name=".UI.MainActivity"
+            android:name=".UI.home.MainActivity"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +20,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".UI.AddAndSee.AddCourseActivity"/>
-        <activity android:name=".UI.AddAndSee.SeeCourseActivity"/>
-        <activity android:name=".UI.AddAndSee.AddCourseTimeActivity"/>
+        <activity android:name=".UI.AddAndSee.SeeCourseActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".UI.AddAndSee.AddCourseTimeActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".UI.AddAndSee.AddCourseNoteActivity"/>
+        <activity android:name=".UI.AddAndSee.AddOrChangeACourseTimeActivity"/>
     </application>
 
 </manifest>

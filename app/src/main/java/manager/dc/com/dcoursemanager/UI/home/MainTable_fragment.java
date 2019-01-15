@@ -1,4 +1,4 @@
-package manager.dc.com.dcoursemanager.UI;
+package manager.dc.com.dcoursemanager.UI.home;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,10 +20,12 @@ import manager.dc.com.dcoursemanager.Adapter.MainTableAdapter;
 import manager.dc.com.dcoursemanager.OBJ.Courses;
 import manager.dc.com.dcoursemanager.R;
 import manager.dc.com.dcoursemanager.UI.AddAndSee.AddCourseActivity;
+import manager.dc.com.dcoursemanager.UI.AddAndSee.AddCourseNoteActivity;
 import manager.dc.com.dcoursemanager.UI.AddAndSee.SeeCourseActivity;
 
 public class MainTable_fragment extends Fragment implements MainTableAdapter.MyClickListener,View.OnClickListener {
     int NowWeekNum;
+    int NowTermNum;
     EditText ENowWeekNum;
     Button Jump2Week;
     Button addCourse;
@@ -42,6 +44,8 @@ public class MainTable_fragment extends Fragment implements MainTableAdapter.MyC
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        NowWeekNum = 1;
+        NowTermNum = 1;
     }
 
     @Override
@@ -52,7 +56,6 @@ public class MainTable_fragment extends Fragment implements MainTableAdapter.MyC
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        NowWeekNum = 1;
         mListView = view.findViewById(R.id.MainTable_List);
         addCourse = view.findViewById(R.id.MainTable_B_AddCourse);
         addCourse.setOnClickListener(this);
@@ -77,31 +80,28 @@ public class MainTable_fragment extends Fragment implements MainTableAdapter.MyC
 
     @Override
     public void clickListener(View v) {
-        int postion = ((Integer) v.getTag()).intValue();
-        int termNum = ((Integer) v.getTag(R.id.tag_term_num));
-        int weekNum = ((Integer) v.getTag(R.id.tag_week_num));
-        int courseNum = ((Integer) v.getTag(R.id.tag_course_num));
+        int postion = (int) v.getTag(R.id.tag_postion);
         switch (v.getId()) {
             case R.id.MainTable_Monday:
-                Jump2NotePage(v,1);
+                Jump2NotePage(v,1,postion);
                 break;
             case R.id.MainTable_Tuesday:
-                Jump2NotePage(v,2);
+                Jump2NotePage(v,2,postion);
                 break;
             case R.id.MainTable_Wednesday:
-                Jump2NotePage(v,3);
+                Jump2NotePage(v,3,postion);
                 break;
             case R.id.MainTable_Thursday:
-                Jump2NotePage(v,4);
+                Jump2NotePage(v,4,postion);
                 break;
             case R.id.MainTable_Friday:
-                Jump2NotePage(v,5);
+                Jump2NotePage(v,5,postion);
                 break;
             case R.id.MainTable_Saturday:
-                Jump2NotePage(v,6);
+                Jump2NotePage(v,6,postion);
                 break;
             case R.id.MainTable_Sunday:
-                Jump2NotePage(v,7);
+                Jump2NotePage(v,7,postion);
                 break;
         }
     }
@@ -111,7 +111,16 @@ public class MainTable_fragment extends Fragment implements MainTableAdapter.MyC
      * @param v 课程表中课程（可空）的点击
      * @param weeknum 星期数
      */
-    private void Jump2NotePage(View v,int weeknum){
+    private void Jump2NotePage(View v,int weeknum,int postion){
+        Intent intent = new Intent(getActivity(),AddCourseNoteActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt("week",NowWeekNum);
+        bundle.putInt("term",NowTermNum);
+        bundle.putInt("weekNum",weeknum);
+        bundle.putInt("courseNum",postion+1);
+        bundle.putString("name",((TextView)v).getText().toString());
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     /**

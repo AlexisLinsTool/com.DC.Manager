@@ -9,6 +9,11 @@
     <string name="MianTable_H_1_6">周六</string>
     <string name="MianTable_H_1_7">周日</string>
     <string name="Help">Help</string>
+    <string name="Intent_week">week</string>
+    <string name="Intent_weekNum">weekNum</string>
+    <string name="Intent_courseNum">courseNum</string>
+    <string name="Intent_courseName">courseName</string>
+    <string name="Intent_SubjectId">Subject</string>
 
     <!--setTag的Key-->
     <item type="id" name="tag_postion"></item>

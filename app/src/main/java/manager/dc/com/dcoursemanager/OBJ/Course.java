@@ -2,9 +2,13 @@ package manager.dc.com.dcoursemanager.OBJ;
 
 public class Course {
     int termNum;
+    long CourseId;
+    long Timeid;
     String courseID;
     String courseName;
     String courseT;
+    int startWeek;
+    int endWeek;
     int weekNum;
     int week;
     int courseNum;
@@ -82,4 +86,20 @@ public class Course {
     public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
+
+    public int getStartWeek() { return startWeek; }
+
+    public void setStartWeek(int startWeek) { this.startWeek = startWeek; }
+
+    public int getEndWeek() { return endWeek; }
+
+    public void setEndWeek(int endWeek) { this.endWeek = endWeek; }
+
+    public long getCourseId() { return CourseId; }
+
+    public void setCourseId(long courseId) { CourseId = courseId; }
+
+    public long getTimeid() { return Timeid; }
+
+    public void setTimeid(long timeid) { Timeid = timeid; }
 }
